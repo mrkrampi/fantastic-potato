@@ -1,5 +1,8 @@
-export const COURSES = [
+import { CourseInterface } from '@/interface/course.interface';
+
+export const COURSES: Array<CourseInterface> = [
   {
+    id: 1,
     title: 'QA Engineer',
     duration: '3 дні',
     price: 'Безкоштовно',
@@ -7,6 +10,7 @@ export const COURSES = [
     imageUrl: 'https://static.tildacdn.com/tild6666-3631-4261-b366-386632336233/Untitled-3_copy.svg',
   },
   {
+    id: 2,
     title: 'Project Manager',
     duration: '3 дні',
     price: 'Безкоштовно',

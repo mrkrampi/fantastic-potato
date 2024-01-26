@@ -71,6 +71,13 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "rectangle-spin": "hello 5.5s linear infinite",
+        "stepper-1": "stepper-1 1s linear forwards",
+        "stepper-2": "stepper-2 1.5s linear forwards",
+        "stepper-3": "stepper-3 2.5s linear forwards",
+        "mobile-stepper-1": "mobile-stepper-1 1s linear forwards",
+        "mobile-stepper-2": "mobile-stepper-2 1.5s linear forwards",
+        "mobile-stepper-3": "mobile-stepper-3 2.5s linear forwards",
       },
     },
   },

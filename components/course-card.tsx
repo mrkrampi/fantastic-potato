@@ -1,17 +1,14 @@
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import moment from 'moment';
+import Image from 'next/image';
 
-interface CourseCardProps {
-  title: string;
-  duration: string;
-  cost: string;
-  startDate: Date;
-  imageUrl: string;
+import { Button } from '@/components/ui/button';
+import { CourseInterface } from '@/interface/course.interface';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+
+interface CourseCardProps extends CourseInterface {
 }
 
-export const CourseCard = ({ imageUrl, startDate, duration, cost, title }: CourseCardProps) => {
+export const CourseCard = ({ imageUrl, startDate, duration, price, title }: CourseCardProps) => {
   return (
     <Card className="md:max-w-[360px] pt-5 pb-10 px-4 flex flex-col gap-y-4 flex-1 shadow-2xl">
       <CardHeader>
@@ -26,7 +23,7 @@ export const CourseCard = ({ imageUrl, startDate, duration, cost, title }: Cours
       </CardHeader>
       <CardContent className="flex flex-col">
         <span><strong>Тривалість: </strong>{duration}</span>
-        <span><strong>Вартість: </strong>{cost}</span>
+        <span><strong>Вартість: </strong>{price}</span>
         <span><strong>Старт: </strong>{moment(startDate).format('DD.MM.YYYY')}</span>
       </CardContent>
       <CardFooter>

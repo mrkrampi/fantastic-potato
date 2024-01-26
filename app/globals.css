@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -9,68 +9,172 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/*TODO: Refactor to move animation inside tailwindcss.config*/
+@keyframes hello {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  27% {
+      opacity: 0.3;
+      transform: rotate(400deg);
+      animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stepper-1 {
+  0% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateX(10vw);
+  }
+}
+
+@keyframes stepper-2 {
+  0% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateX(20vw);
+  }
+}
+
+@keyframes stepper-3 {
+  0% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateX(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateX(30vw);
+  }
+}
+
+@keyframes mobile-stepper-1 {
+  0% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateY(85px);
+  }
+}
+
+@keyframes mobile-stepper-2 {
+  0% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateY(180px);
+  }
+}
+
+@keyframes mobile-stepper-3 {
+  0% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: translateY(0px);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateY(270px);
   }
 }

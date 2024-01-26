@@ -1,67 +1,71 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMediaQuery, useToggle } from 'usehooks-ts';
+import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
+
 import { cn } from '@/lib/utils';
-import { ChevronDownIcon, ChevronUpIcon, Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
+import { Button } from '@/components/ui/button';
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isShowCoursesDropdown, setIsShowCoursesDropdown] = useState<boolean>(false);
+  const [isMenuOpen, toggleMenu] = useToggle(false);
+  const [isShowCoursesDropdown, toggleCoursesDropdown] = useToggle(false);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const onToggleCoursesDropdown = () => {
+    if (!isMobile) {
+      return;
+    }
+
+    toggleCoursesDropdown();
   };
 
-  const toggleCoursesDropdown = () => {
-    setIsShowCoursesDropdown(!isShowCoursesDropdown);
+  const onScrollTo = (anchor: string) => {
+    if (isMobile) {
+      toggleMenu();
+    }
+
+    setTimeout(() => {
+      const element = document.querySelector(`#${anchor}`);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   };
 
   return (
-    <nav className="w-full flex flex-wrap items-center justify-center p-4 md:h-[100px] h-auto">
+    <header className="w-full flex flex-wrap items-center justify-center py-2 px-3 md:p-4 md:h-[100px] h-auto">
       <div className="h-full max-w-[1200px] w-full flex flex-wrap items-center justify-between gap-x-4">
         <Image src="https://placehold.co/200x55" width={200} height={55} alt="Logo"/>
         <button
-          data-collapse-toggle="mobile-menu"
-          type="button"
           className="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-          aria-controls="mobile-menu-2"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
           onClick={toggleMenu}
         >
           <span className="sr-only">Відкрити меню</span>
           <HamburgerMenuIcon className={cn(
             'font-bold h-6 w-6 text-black',
-            isOpen && 'hidden',
+            isMenuOpen && 'hidden',
           )}/>
           <Cross1Icon className={cn(
             'font-bold h-6 w-6 text-black',
-            !isOpen && 'hidden',
+            !isMenuOpen && 'hidden',
           )}/>
         </button>
-        <div className={cn(
+        <nav className={cn(
           'hidden md:block w-full md:w-auto',
-          isOpen && 'block',
+          isMenuOpen && 'block',
         )}>
-          <ul className="w-full flex flex-col md:flex-row items-center justify-center gap-x-1">
+          <ul className="w-full flex flex-col md:flex-row items-center justify-center gap-x-1 pt-2 md:pt-0">
             <li className="relative w-full text-center group">
               <Button
                 variant="link"
-                onClick={toggleCoursesDropdown}
-                className="md:pointer-events-none"
+                onClick={onToggleCoursesDropdown}
               >
                 IT Курси
-                {
-                  isShowCoursesDropdown
-                    ? <ChevronUpIcon className="ml-2"/>
-                    : <ChevronDownIcon className="ml-2"/>
-                }
               </Button>
               <div className={cn(
-                "hidden md:group-hover:block bg-white text-base z-10 list-none divide-y divide-gray-100 rounded w-full md:pt-2 md:w-44 md:absolute",
-                isShowCoursesDropdown && 'block'
+                'hidden md:group-hover:block bg-white text-base z-10 list-none divide-y divide-gray-100 rounded w-full md:pt-2 md:w-44 md:absolute',
+                isShowCoursesDropdown && 'block',
               )}>
                 <div className="md:shadow-[0_0_7px_0_rgba(0,0,0,.2)]">
                   <ul className="md:py-1">
@@ -90,11 +94,9 @@ export const Header = () => {
             <li>
               <Button
                 variant="link"
-                asChild
+                onClick={() => onScrollTo('free-events')}
               >
-                <Link href="/">
-                  Безкоштовні події
-                </Link>
+                Безкоштовні події
               </Button>
             </li>
             <li>
@@ -148,8 +150,8 @@ export const Header = () => {
               </Button>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
