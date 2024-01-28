@@ -78,6 +78,7 @@ const config = {
         "mobile-stepper-1": "mobile-stepper-1 1s linear forwards",
         "mobile-stepper-2": "mobile-stepper-2 1.5s linear forwards",
         "mobile-stepper-3": "mobile-stepper-3 2.5s linear forwards",
+        "slow-spin": "spin 25s linear infinite",
       },
     },
   },

@@ -5,10 +5,13 @@ import { Stepper } from '@/components/landing/stepper';
 
 export const Banner = () => {
   return (
-    <section className="h-screen w-full">
-      <div className="relative h-full w-full bg-cover bg-center bg-no-repeat bg-[url('https://thumb.tildacdn.com/tild6138-6137-4365-a331-306363663337/-/format/webp/DSC03505.jpg')]">
-        <div className="absolute inset-0 bg-orange-400/90 px-10 md:px-20 py-12 md:py-[200px]">
-          <div className="grid md:grid-cols-3 max-w-[1200px] mx-auto">
+    <section className="w-full">
+      <div className="relative">
+        <div
+          className="absolute inset-0 z-0 h-full w-full bg-cover bg-center bg-no-repeat bg-[url('https://thumb.tildacdn.com/tild6138-6137-4365-a331-306363663337/-/format/webp/DSC03505.jpg')]">
+        </div>
+        <div className="bg-orange-400/90 relative">
+          <div className="grid px-10 md:px-20 py-12 md:py-[200px] md:grid-cols-3 max-w-[1200px] z-10 mx-auto">
             <div className="col-span-2">
               <h1 className="text-white text-3xl md:text-5xl font-bold uppercase">
                 Name It Academy
@@ -48,5 +51,5 @@ export const Banner = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

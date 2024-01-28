@@ -2,10 +2,10 @@ import { StudyPlanCard } from '@/components/study-plan-card';
 
 export const StudyPlans = () => {
   return (
-    <section className="w-full px-8 py-20 md:py-24 md:px-20">
+    <section className="w-full px-8 py-20 md:py-28 md:px-20">
       <div className="mx-auto max-w-[1200px]">
         <h1 className="font-bold text-4xl md:text-6xl w-[75%]">Комплексні програми навчання</h1>
-        <p className="py-14 text-xl md:text-2xl w-[75%]">
+        <p className="pt-14  pb-12 text-xl md:text-2xl w-[75%]">
           Опануйте нову професію за 3-6 місяців та почніть заробляти від 500$
         </p>
         <div className="flex flex-wrap pt-8 md:pt-16 gap-8 w-full">
