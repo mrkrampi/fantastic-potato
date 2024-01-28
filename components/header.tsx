@@ -99,14 +99,14 @@ export const Header = () => {
                 Безкоштовні події
               </Button>
             </li>
-            <li>
-              <Button
-                variant="link"
-                onClick={() => onScrollTo('mentors')}
-              >
-                Викладачі
-              </Button>
-            </li>
+            {/*<li>*/}
+            {/*  <Button*/}
+            {/*    variant="link"*/}
+            {/*    onClick={() => onScrollTo('mentors')}*/}
+            {/*  >*/}
+            {/*    Викладачі*/}
+            {/*  </Button>*/}
+            {/*</li>*/}
             <li>
               <Button
                 variant="link"
@@ -117,16 +117,16 @@ export const Header = () => {
                 </Link>
               </Button>
             </li>
-            <li>
-              <Button
-                variant="link"
-                asChild
-              >
-                <Link href="/">
-                  Блог
-                </Link>
-              </Button>
-            </li>
+            {/*<li>*/}
+            {/*  <Button*/}
+            {/*    variant="link"*/}
+            {/*    asChild*/}
+            {/*  >*/}
+            {/*    <Link href="/">*/}
+            {/*      Блог*/}
+            {/*    </Link>*/}
+            {/*  </Button>*/}
+            {/*</li>*/}
             <li>
               <Button
                 variant="link"

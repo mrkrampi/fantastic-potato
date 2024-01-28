@@ -10,7 +10,8 @@ export const StudyPlans = () => {
         </p>
         <div className="flex flex-wrap pt-8 md:pt-16 gap-8 w-full">
           <StudyPlanCard index={0} plan={{ title: 'Професія QA', id: 1, duration: '3 години', format: 'Онлайн' }}/>
-          <StudyPlanCard index={1} plan={{ title: 'Project Manager', id: 2, duration: '3 дні', format: 'Онлайн' }}/>
+          <StudyPlanCard index={1} plan={{ title: 'Професія Проджект Менеджер', id: 2, duration: '3 дні', format: 'Онлайн' }}/>
+          <StudyPlanCard index={2} plan={{ title: 'Професія Бізнес Аналітик', id: 3, duration: '3 дні', format: 'Онлайн' }}/>
         </div>
       </div>
     </section>

@@ -13,7 +13,29 @@ export const StudyDirection = () => {
           <Card className="md:max-w-[360px] py-5 px-4 flex flex-col gap-y-4 flex-1 shadow-2xl">
             <CardHeader className="pb-2">
               <Image
-                src="https://static.tildacdn.com/tild3930-3438-4236-a437-383635623934/1_1.svg"
+                src="https://static.tildacdn.com/tild6666-3631-4261-b366-386632336233/Untitled-3_copy.svg"
+                alt="Logo"
+                width={100}
+                height={100}
+              />
+            </CardHeader>
+            <CardContent className="font-bold text-xl py-3">
+              Курси Тестування
+            </CardContent>
+            <CardFooter className="px-4 py-3">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-black border-2 rounded-full"
+              >
+                Детальніше
+              </Button>
+            </CardFooter>
+          </Card>
+          <Card className="md:max-w-[360px] py-5 px-4 flex flex-col gap-y-4 flex-1 shadow-2xl">
+            <CardHeader className="pb-2">
+              <Image
+                src="https://static.tildacdn.com/tild3339-6332-4134-b561-393965613162/Untitled-3_copy1.svg"
                 alt="Logo"
                 width={100}
                 height={100}
@@ -35,14 +57,14 @@ export const StudyDirection = () => {
           <Card className="md:max-w-[360px] py-5 px-4 flex flex-col gap-y-4 flex-1 shadow-2xl">
             <CardHeader className="pb-2">
               <Image
-                src="https://static.tildacdn.com/tild3130-3431-4761-b739-343237643930/Untitled-3_copy.svg"
+                src="https://static.tildacdn.com/tild6330-6137-4336-b161-353635356431/Untitled-3_copy_1_2_.svg"
                 alt="Logo"
                 width={100}
                 height={100}
               />
             </CardHeader>
             <CardContent className="font-bold text-xl py-3">
-              Курси Тестування
+              Курси Бізнес Аналітика
             </CardContent>
             <CardFooter className="px-4 py-3">
               <Button
