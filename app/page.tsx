@@ -4,6 +4,8 @@ import { StudyPlans } from '@/components/landing/study-plans';
 import { CoursesList } from '@/components/landing/courses-list';
 import { StudyDirection } from '@/components/landing/study-direction';
 import { GetCall } from '@/components/landing/get-call';
+import { MentorsSection } from '@/components/landing/mentors-section';
+import { NewEventsCat } from '@/components/landing/new-events-cat';
 
 export default function Home() {
   return (
@@ -16,6 +18,10 @@ export default function Home() {
       <StudyDirection/>
       <StudyPlans/>
       <GetCall/>
+      <div id="mentors">
+        <MentorsSection/>
+      </div>
+      <NewEventsCat/>
     </main>
   );
 }

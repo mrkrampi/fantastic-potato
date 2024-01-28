@@ -102,11 +102,9 @@ export const Header = () => {
             <li>
               <Button
                 variant="link"
-                asChild
+                onClick={() => onScrollTo('mentors')}
               >
-                <Link href="/">
-                  Викладачі
-                </Link>
+                Викладачі
               </Button>
             </li>
             <li>

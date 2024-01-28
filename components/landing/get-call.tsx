@@ -1,9 +1,18 @@
-import Image from 'next/image';
+'use client';
 
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import { useMaskito } from '@maskito/react';
+import metadata from 'libphonenumber-js/min/metadata';
+import { maskitoPhoneOptionsGenerator } from '@maskito/phone';
+
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
+const phoneMask = maskitoPhoneOptionsGenerator({ countryIsoCode: 'UA', metadata });
 
 export const GetCall = () => {
+  const inputRef = useMaskito({ options: phoneMask });
+
   return (
     <section className="relative px-8 py-20 md:py-24 md:px-20 bg-blue-600">
       <div className="absolute w-full top-0 left-0 flex justify-center">
@@ -33,7 +42,7 @@ export const GetCall = () => {
         <div className="flex items-center gap-x-8 flex-wrap my-12 md:my-24">
           <div className="flex flex-col md:flex-row w-full gap-2 md:gap-4 items-center">
             <Input type="text" placeholder="Імʼя" className="h-[60px] bg-white px-4"/>
-            <Input type="tel" placeholder="Номер телефону" className="h-[60px] bg-white px-4"/>
+            <Input ref={inputRef} type="tel" placeholder="Номер телефону" className="h-[60px] bg-white px-4"/>
             <Input type="email" placeholder="Email" className="h-[60px] bg-white px-4"/>
             <Button
               type="submit"
@@ -46,5 +55,5 @@ export const GetCall = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
