@@ -1,6 +1,6 @@
 import { CourseInterface } from '@/interface/course.interface';
 
-export const COURSES: Array<CourseInterface> = [
+export const CoursesConst: Array<CourseInterface> = [
   {
     id: 1,
     title: 'QA Engineer',

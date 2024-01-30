@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 
 const phoneMask = maskitoPhoneOptionsGenerator({ countryIsoCode: 'UA', metadata });
 
-export const GetCall = () => {
+export const GetCallSection = () => {
   const inputRef = useMaskito({ options: phoneMask });
 
   return (
@@ -37,7 +37,7 @@ export const GetCall = () => {
           Отримати консультацію
         </h1>
         <p className="text-white md:pb-8 text-xl md:text-2xl md:w-[75%]">
-          Після відправки заявки з вами зв&apos;яжеться менеджер Name IT Academy
+          Після відправки заявки з вами зв&apos;яжеться менеджер Niko IT Academy
         </p>
         <div className="flex items-center gap-x-8 flex-wrap my-12 md:my-24">
           <div className="flex flex-col md:flex-row w-full gap-2 md:gap-4 items-center">

@@ -1,8 +1,9 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import Image from 'next/image';
 
-export const StudyDirection = () => {
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+
+export const StudyDirectionSection = () => {
   return (
     <section className="relative px-8 py-16 md:py-24 md:px-20 bg-blue-600">
       <div className="mx-auto max-w-[1200px]">

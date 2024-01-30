@@ -1,9 +1,9 @@
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
-import { Stepper } from '@/components/landing/stepper';
+import { Stepper } from '@/app/_components/stepper';
 
-export const Banner = () => {
+export const BannerSection = () => {
   return (
     <section className="w-full">
       <div className="relative">
@@ -14,7 +14,7 @@ export const Banner = () => {
           <div className="grid px-10 md:px-20 py-12 md:py-[200px] md:grid-cols-3 max-w-[1200px] z-10 mx-auto">
             <div className="col-span-2">
               <h1 className="text-white text-3xl md:text-5xl font-bold uppercase">
-                Name It Academy
+                Niko It Academy
               </h1>
               <p className="text-white md:w-[65%] font-light py-8">
                 Зробимо з тебе повноцінного ІТ фахівця, працевлаштуємо на твою першу роботу та покажемо як зростати далі в IT-сфері.

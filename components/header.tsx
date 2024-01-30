@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useMediaQuery, useToggle } from 'usehooks-ts';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 
@@ -33,9 +32,12 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full flex flex-wrap items-center justify-center py-2 px-3 md:p-4 md:h-[100px] h-auto">
+    <header className="w-full flex flex-wrap items-center justify-center py-2 px-3 md:p-0 md:px-4 md:min-h-[100px] h-auto">
       <div className="h-full max-w-[1200px] w-full flex flex-wrap items-center justify-between gap-x-4">
-        <Image src="https://placehold.co/200x55" width={200} height={55} alt="Logo"/>
+        <Link href="/" className="w-full max-w-[150px] h-[55px]">
+          <div
+            className="h-[55px] w-full bg-center bg-no-repeat bg-contain bg-[url('/logo.jpeg')]"/>
+        </Link>
         <button
           className="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
           aria-expanded={isMenuOpen}
@@ -75,7 +77,7 @@ export const Header = () => {
                         variant="link"
                         className="hover:bg-gray-100 w-full"
                       >
-                        <Link href="#" className="text-sm text-gray-700 block px-4 py-2">Project Manager</Link>
+                        <Link href="#" className="text-sm text-gray-700 block px-4 py-2">Проджект Менеджер</Link>
                       </Button>
                     </li>
                     <li>
@@ -85,6 +87,15 @@ export const Header = () => {
                         className="hover:bg-gray-100 w-full"
                       >
                         <Link href="#" className="text-sm text-gray-700 block px-4 py-2">QA Engineer</Link>
+                      </Button>
+                    </li>
+                    <li>
+                      <Button
+                        asChild
+                        variant="link"
+                        className="hover:bg-gray-100 w-full"
+                      >
+                        <Link href="#" className="text-sm text-gray-700 block px-4 py-2">Бізнес аналітик</Link>
                       </Button>
                     </li>
                   </ul>

@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-export const NewEventsCat = () => {
+export const NewEventsCatSection = () => {
   return (
     <section className="relative px-8 py-20 md:py-24 md:px-20 bg-gray-100">
       <div className="mx-auto max-w-[1200px]">

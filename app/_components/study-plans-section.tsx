@@ -1,6 +1,8 @@
+import { STUDY_PLANS } from '@/consts/study-plans.const';
 import { StudyPlanCard } from '@/components/study-plan-card';
+import { StudyPlanInterface } from '@/interface/study-plan.interface';
 
-export const StudyPlans = () => {
+export const StudyPlansSection = () => {
   return (
     <section className="w-full px-8 py-20 md:py-28 md:px-20">
       <div className="mx-auto max-w-[1200px]">
@@ -9,9 +11,15 @@ export const StudyPlans = () => {
           Опануйте нову професію за 3-6 місяців та почніть заробляти від 500$
         </p>
         <div className="flex flex-wrap pt-8 md:pt-16 gap-8 w-full">
-          <StudyPlanCard index={0} plan={{ title: 'Професія QA', id: 1, duration: '3 години', format: 'Онлайн' }}/>
-          <StudyPlanCard index={1} plan={{ title: 'Професія Проджект Менеджер', id: 2, duration: '3 дні', format: 'Онлайн' }}/>
-          <StudyPlanCard index={2} plan={{ title: 'Професія Бізнес Аналітик', id: 3, duration: '3 дні', format: 'Онлайн' }}/>
+          {
+            STUDY_PLANS.map((plan: StudyPlanInterface, index: number) =>
+              (
+                <StudyPlanCard
+                  key={plan.id}
+                  index={index} plan={plan}
+                />
+              ))
+          }
         </div>
       </div>
     </section>
